@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>GAME</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="game_of_life.css">
+</head>
+
+<body>
+	<div class="tabletop">
+		<canvas id="game_container" width="800px" height="800px"></canvas>
+	</div>
+	<div class="stats">
+		<h1>Controls</h1>
+		<button id="start" class="success">Start</button>
+		<button id="stop">Stop</button>
+		<button id="reset" class="danger">Reset</button>
+
+		<div class="grid-size">
+			<label for="gridsize">Grid Size:</label>
+			<input type="text" name="gridsize" id="gridsize" value="0">
+			<input type="range" step="1" min="0" max="1000" value="0" class="slider" id="gridrange">
+		</div>
+
+		<hr>
+
+		<h1>States</h1>
+		<div>
+			<input type="range" step="1" min="0" max="0" value="0" class="slider" id="staterange">
+			<label for="generation">Generation:</label>
+			<input type="text" name="generation" id="generation" class="labelled-input" value="0">
+			<label for="cellcount">Population:</label>
+			<input type="text" name="cellcount" id="cellcount" class="labelled-input" value="0">
+		</div>
+
+		<hr>
+
+		<h1>Load</h1>
+		<div>
+			<label for="start_x">X:</label>
+			<input type="number" name="start_x" id="start_x" min="0" max="100" value="0">
+			<label for="start_y">Y:</label>
+			<input type="number" name="start_y" id="start_y" min="0" max="100" value="0">
+			<textarea class="textarea" id="textarea"></textarea>
+			<button id="load">Load</button>
+			<button id="clear" class="danger">Clear</button>
+
+			<div class="info">
+				<p>
+					<b>Info</b>: You can load hundreds of examples from <a href="http://www.conwaylife.com/wiki/Main_Page" target="blank">LifeWiki</a>. Look for "<b>.cells</b>" patterns.
+				</p>
+				<p>
+					They usually are on the right hand side box on the "<b>Pattern Files</b>" section.
+				</p>
+				<p>
+					<b>Warning:</b> Do not include lines starting by the exclamation sign "<b>!</b>", those are comments.
+				</p>
+			</div>
+		</div>
+
+	</div>
+	<script type="text/javascript" src="game_of_life.js"></script>
+</body>
+
+</html>
